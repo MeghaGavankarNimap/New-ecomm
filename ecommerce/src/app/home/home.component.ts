@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { UsersService } from '../users.service';
 import { CommonModule } from '@angular/common';
 
+import { Routes } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -14,7 +17,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent {
    data:any=[]
-  constructor(private userservice:UsersService){}
+  constructor(private userservice:UsersService,private router:Router){}
 
   ngOnInit(){
     
@@ -27,11 +30,17 @@ export class HomeComponent {
     
      this.userservice.getAllProducts().subscribe((res)=>{
        console.log(res)
-       this.data=res
+       this.data=res.products;
        
 
     })
 
+  }
+
+
+
+  navToSingleProd(id:any){
+    this.router.navigate(['/product',id])
   }
 
 }

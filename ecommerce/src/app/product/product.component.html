@@ -1,0 +1,28 @@
+<!-- <p>product works!</p> -->
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col-8">
+            <div  class="product">
+                <img [src]="product?.image">
+            </div>
+           
+        </div>
+        <div class="col-4">
+            <div class="product-content" *ngIf="product">
+                <h5>{{product.title}}</h5>
+
+                <h5>100% Original Products
+                Pay on delivery might be available
+                Easy 7 days returns and exchanges</h5>
+            </div>
+           <h5>Select Size</h5>
+           <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+           </div>
+        </div>
+    </div>
+</div>

@@ -30,15 +30,19 @@
 <!-- </div> -->
 
 
+
 <div class="container">
    
     <div class="row">
         <ng-template ngFor let-hero [ngForOf]="data">
             <div class="col-sm">
       <div  class="card">
-        <img [src]="hero.image" class="card-img-top" alt="...">
+        <a (click)="navToSingleProd(hero.id)">
+          <img [src]="hero.thumbnail" class="card-img-top" alt="...">
+        </a>
+       
         <div class="col-sm" class="card-body">
-            {{hero.category}}
+            <!-- {{hero}} -->
           </div>
         </div>
       </div>
